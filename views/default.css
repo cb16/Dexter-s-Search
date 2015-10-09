@@ -1,0 +1,175 @@
+body{
+	/*background: url("bg2.jpg");
+	background-repeat: no-repeat;
+	background-size: 1450px 710px;
+	background-position: fixed;*/
+    background-color: #F2F2F2;
+}
+
+h1{
+	margin-top: 10px;
+	margin-left: 0px;
+	text-align: center;
+	font-family: 'Slackey', cursive;
+	color: #A9BCF5;
+	text-shadow: 0px 1px 0px #819FF7, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+	font-size: 40px;
+}
+
+h3{
+	margin-top: -60px;
+	margin-left: 0px;
+	text-align: center;
+	font-family: 'Slackey', cursive;
+	color: #A9BCF5;
+	text-shadow: 0px 1px 0px #819FF7, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+	font-size: 30px ;
+}
+
+#terms{
+	width: 670px; /*670*/
+	text-decoration: none;
+    color: #6C7DB1;
+	outline: none;
+	margin: -30px 0px 10px 240px;
+    border-radius: 10px;
+    border: 1px solid #CED8F6;
+    padding: 10px;
+    -webkit-border-radius: 10px 0px 0px 10px;;
+    -moz-border-radius: 10px;
+    background: #CED8F6;
+    box-shadow: inset 0px 0px 15px #EFF2FB;
+    -moz-box-shadow: inset 0px 0px 15px #EFF2FB;
+    -webkit-box-shadow: inset 0px 0px 15px #EFF2FB;
+}
+
+input{
+	outline: none;
+}
+
+#button, #button:hover, #button:active{
+    width: 100px;
+    height: 42px;
+	color: #6C7DB1;
+    font-weight: bold;
+	margin-top: 10px; /*13 -10*/
+	margin-left: 0px;
+	border-radius: 10px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    -moz-border-radius: 10px;
+    border: 1px solid #CED8F6;
+    padding: 10px 20px 10px 20px;
+    background: #B4C1E7;
+    outline: none;
+    box-shadow: inset 0px 0px 15px #B4C1E7;
+    -moz-box-shadow: inset 0px 0px 15px #B4C1E7;
+    -webkit-box-shadow: inset 0px 0px 15px #CED8F6;
+}
+
+label{
+    color: #6C7DB1;
+}
+
+hr{
+    border-color: #D8D8D8;
+    width: 900px;
+    margin-left: 130px;
+}
+
+#recovered-result{
+    margin-top: -10px;
+    margin-left: 0px;
+    text-align: center;
+    font-family: 'Slackey', cursive;
+    color: #A9BCF5;
+    text-shadow: 0px 1px 0px #819FF7, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 3px #444, 0px 3px 0px #333, 0px 3px 7px #001135;
+    font-size: 30px;   
+}
+
+#result-table{
+	width: 905px;
+    margin-left: 130px;
+}
+
+.res{
+	padding: 10px 0px 0px 30px;
+	color: #5858FA;
+}
+
+.rank{
+	font-family: 'Slackey', cursive;
+    color: #A9BCF5;
+    text-shadow: 0px 1px 0px #819FF7, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 3px #444, 0px 3px 0px #333, 0px 3px 7px #001135;
+    font-size: 20px;   
+}
+
+.line{
+	/*border-color: #D8D8D8;*/
+	
+    width: 850px;
+    margin-left: 0px;
+}
+
+/*#field-result{
+	border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 20px 30px 10px 30px;
+    border: 1px solid #FFD2D2;
+    padding: 0px 20px 20px 20px;
+    background: #FFF4F4;
+    box-shadow: inset 0px 0px 15px #FFE5E5;
+    -moz-box-shadow: inset 0px 0px 15px #FFE5E5;
+    -webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
+}
+
+#legend-result{
+	color: #FFA0C9;
+    border-top: 1px solid #FFD2D2;
+    border-left: 1px solid #FFD2D2;
+    border-right: 1px solid #FFD2D2;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    background: #FFF4F4;
+    padding: 0px 8px 0px 8px;
+    box-shadow: -0px -1px 2px #F1F1F1;
+    -moz-box-shadow:-0px -1px 2px #F1F1F1;
+    -webkit-box-shadow:-0px -1px 2px #F1F1F1;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.table fieldset{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 0px 0px 10px 150px;
+    border: 1px solid #FFD2D2;
+    padding: 0px 20px 20px 20px;
+    background: #FFF4F4;
+    box-shadow: inset 0px 0px 15px #FFE5E5;
+    -moz-box-shadow: inset 0px 0px 15px #FFE5E5;
+    -webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
+}
+
+#fieldset2{
+    margin-left: 0px;
+}
+
+.table fieldset legend{
+    color: #FFA0C9;
+    border-top: 1px solid #FFD2D2;
+    border-left: 1px solid #FFD2D2;
+    border-right: 1px solid #FFD2D2;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    background: #FFF4F4;
+    padding: 0px 8px 0px 8px;
+    box-shadow: -0px -1px 2px #F1F1F1;
+    -moz-box-shadow:-0px -1px 2px #F1F1F1;
+    -webkit-box-shadow:-0px -1px 2px #F1F1F1;
+    font-weight: normal;
+    font-size: 14px;
+}*/

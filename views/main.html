@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Dexter's Search</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="default.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="http://4.bp.blogspot.com/-8xQplx4eUzw/VJy7xYLfNSI/AAAAAAAAq1I/J3rG0PgAIyo/s1600/Dexter2.png">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="public/boostrap/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function(){
+      	$("#search-form").submit(function() {
+      		var stopVal = $("input[type='radio'][name='stop']:checked").val();
+      		var stemVal = $("input[type='radio'][name='stem']:checked").val();
+      		$.post("http://localhost:3000/search", { terms: $("#terms").val(), stop: stopVal, stem: stemVal })
+			  .done(function(data) {
+			    $('#result-table tr').not(function  (){
+			      if($(this).has('th').length) {
+			        return true
+			      }
+			    }).remove();
+			    $('#number').empty();
+			    var size = 0;
+			    $.each(data, function(index, value) {
+			    	size++;
+			      $('#result-table tbody tr:last').after('<tr ><td class="rank">' + (index+1) + '</td><td class="res">' + value._source.content.replace(/(?:\r\n|\r|\n)/g, '<br />') + '<hr color="#848484"; class="line"></td></tr>');
+			    });
+			    $('#number').append(size);
+			  });
+			return false;
+      	})
+      })
+    </script>
+  </head>
+  <body>
+	<div class="container">
+	  <div class="row" 
+	  	<div class="col-md-3">
+	  		<h1> Dexter's </h1> <br>
+				<h3>Search</h3>
+	  	</div>
+	  	<form id="search-form" method="POST" class="mystyle">
+  			<div class="col-md-8">
+  				<table class="table" align="center">
+  					<tr>
+  						<input type="text" name="query" id="terms" placeholder="Search...">
+  					</tr>
+  					<tr>
+  						<td>	
+								<input type="radio" name="stop" value="stop-words" id="stop-words"> 
+			  				<label for="stop-words">with stopwords</label>
+			  				<br>
+			  			</td>
+			  			<td>
+			  				<input type="radio" name="stop" value="no-stop-words" id="no-stop-words" checked>
+			  				<label for="no-stop-words">without stopwords</label>
+			  			</td>
+			  			<td>
+				  			<input type="radio" name="stem" value="stemming" id="stemming"> 
+				  			<label for="stemming">with stemming</label><br>
+				  		</td>
+			  			<td>
+				  			<input type="radio" name="stem" value="no-stemming" id="no-stemming" checked>
+				  			<label for="no-stemming">without stemming</label><br>
+				  		</td>
+  					</tr>
+				</table>  			
+  			</div>
+	  		<div class="col-md-1">
+	  			<center><button id="button" type="submit" class="btn btn-info" value="search"> search </button></center>
+	  		</div>
+  		</form>
+	  </div>
+	</div>
+	<div class="col-md-12">
+		<hr color="#848484"> 
+			<h1 id="recovered-result"><strong id="number"></strong> recovered documents</h1>
+		<hr color="#848484">
+  		<form>
+  		  <table id="result-table">
+  		  	<th>
+  		  		<tr>
+  		  		</tr>
+  		  	</th>
+  		    <tbody id="tbody">
+  		    </tbody>
+  		  </table>
+  		</form>		
+	</div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+INSTRUCTIONS
+
+na pasta downloads/elasticsearch-1.7.2 rodar: ./bin/elasticsearch
+na pasta documentos/projetos/SecondTry: 
+	para deletar o que tem
+		node clearDexter.js
+	para criar o index
+		node createDexter.js
+	para indexar
+		node dexter.js
+	para rodar
+		node app.js
+
+abrir a página main.html e fazer a pesquisa
+
+para notar a diferença de com e sem stemming, usar a query: "adventure"/"adventures" sem stemmin e depois com.
+para notar a diferença de com e sem stopwords, usar a query: "The Sisterhood" com e sem stop
